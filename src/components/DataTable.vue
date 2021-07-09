@@ -1,16 +1,31 @@
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="posts"
-    :items-per-page="5"
-    class="elevation-1"
-  ></v-data-table>
+  <v-card>
+    <v-card-title>
+      JSON Placeholder Post List
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search title, author or any keyword"
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table
+      :headers="headers"
+      :items="posts"
+      :items-per-page="5"
+      class="elevation-1"
+      :search="search" 
+    ></v-data-table>
+  </v-card>
 </template>
 
 <script>
   export default {
     data() {
       return {
+        search: '',
         headers: [
           {
             text: 'Post Title',
@@ -31,3 +46,7 @@
     },
   }
 </script>
+
+<style scoped>
+  @import "./DataTable.scss";
+</style>
