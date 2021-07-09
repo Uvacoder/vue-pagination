@@ -2,23 +2,21 @@
   <v-app>
     <v-main>
       <DataTable/>
+      <Footer />
     </v-main>
   </v-app>
 </template>
 
 <script>
 import DataTable from './components/DataTable';
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
-
   components: {
     DataTable,
+    Footer
   },
-
-  data: () => ({
-    //
-  }),
   mounted() {
     this.$store.dispatch("getPosts")
   }
