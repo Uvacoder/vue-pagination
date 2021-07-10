@@ -32,10 +32,17 @@
             mdi-delete
           </v-icon>
         </template>
+        <template v-slot:[`item.expand`]="{ item }">
+          <v-icon
+            medium
+            @click="handleContentClick(item)"
+            
+          >
+            mdi-menu-down
+          </v-icon>
+        </template>
         <template v-slot:[`item.body`]="{item}" v-on:click="deleteItem(item)">
-          <tr>
-            {{ item.body }}
-          </tr>   
+          {{ item.body }}  
         </template>
       </v-data-table>
     </v-card>
@@ -49,15 +56,21 @@
         search: '',
         headers: [
           {
-            text: 'Post Title',
-            sortable: false,
+            text: 'Post Title', 
             value: 'title',
-            width: '20%',
+            width: '15%',
             class: "grey lighten-4"
           },
           { text: 'Post Content',
             value: 'body' ,
-            width: '40%',
+            width: '35%',
+            class: "grey lighten-4"
+          },
+            { 
+            text: 'See more', 
+            sortable: false,
+            value: 'expand',
+            width: '5%',
             class: "grey lighten-4"
           },
           { 
@@ -66,6 +79,7 @@
             width: '10%',
             class: "grey lighten-4"
           },
+
           { 
             text: 'Remove', 
             value: 'remove', 
@@ -96,7 +110,7 @@
       handleContentClick: function(item, e, d) {
         console.log('handleContentClick', item, e, d)
         console.log(this.expanded);
-        this.expanded[item.id] = !this.expanded[item.id]
+        this.expanded[item.id] = !this.expanded[item.id];
       },
       handleRowClick: function(a, e, d) {
         console.log('handleRowClick', a, e, d)

@@ -10,7 +10,8 @@ const headers = { Accept: "application/json" };
 export default new Vuex.Store({
   state: {
     authors: [],
-    posts: []
+    posts: [],
+    expanded: {}
   },
   mutations: {
     setPosts(state, payload) {
