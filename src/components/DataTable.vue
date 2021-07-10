@@ -53,6 +53,8 @@
   export default {
     data() {
       return {
+        expanded: {},
+        kot: false,
         search: '',
         headers: [
           {
@@ -94,9 +96,9 @@
       posts() {
         return this.$store.getters.getAllPosts;
       },
-      expanded() {
-        return {}
-      },
+      // expanded() {
+      //   return {}
+      // },
     },
     methods: {
       deleteItem(item) {
@@ -104,17 +106,31 @@
         this.posts.splice(this.editedIndex, 1)
       },
       itemRowBackground: function (item) {
-        console.log(item)
-        return "jamnik"
+        console.log('itemRowBackground', item);
+
+
+        return !this.expanded[item.id] ?  'row-ellipsis' : ''
+
+        // return "jamnik"
       },
       handleContentClick: function(item, e, d) {
         console.log('handleContentClick', item, e, d)
         console.log(this.expanded);
         this.expanded[item.id] = !this.expanded[item.id];
+        this.kot = !this.kot;
+
+        this.$forceUpdate(); //tmp
       },
       handleRowClick: function(a, e, d) {
         console.log('handleRowClick', a, e, d)
       }
+    },
+    updated: function () {
+      this.$nextTick(function () {
+        console.log('rerender')
+        // Code that will run only after the
+        // entire view has been re-rendered
+      })
     }
   }
 </script>
