@@ -34,14 +34,15 @@
         </template>
         <template v-slot:[`item.expand`]="{ item }">
           <v-icon
+            v-if="isEllipsis(item)"
             medium
             @click="handleContentClick(item)"
             
           >
-            mdi-menu-down
+            {{expanded[item.id] ? 'mdi-menu-up' : 'mdi-menu-down'}}
           </v-icon>
         </template>
-        <template v-slot:[`item.body`]="{item}" v-on:click="deleteItem(item)">
+        <template v-slot:[`item.body`]="{item}" >
           {{ item.body }}  
         </template>
       </v-data-table>
@@ -54,7 +55,7 @@
     data() {
       return {
         expanded: {},
-        kot: false,
+        // kot: false,
         search: '',
         headers: [
           {
@@ -96,11 +97,28 @@
       posts() {
         return this.$store.getters.getAllPosts;
       },
+
       // expanded() {
       //   return {}
       // },
     },
     methods: {
+      isEllipsis(item) { //tmp
+        //tmp
+        console.log(item)
+        return true; //code below is ok
+
+        // function isEllipsisActive(e) {
+        //     return (e.offsetWidth < e.scrollWidth);
+        // }
+        // const el = document.querySelector(`.row-id-${item.id} td:nth-child(2)`);
+
+        // if (!el) {
+        //   return true;
+        // }
+
+        // return isEllipsisActive(el)
+      },
       deleteItem(item) {
         this.editedIndex = this.posts.indexOf(item)
         this.posts.splice(this.editedIndex, 1)
@@ -108,18 +126,25 @@
       itemRowBackground: function (item) {
         console.log('itemRowBackground', item);
 
+        const classNames = [`row-id-${item.id}`]
 
-        return !this.expanded[item.id] ?  'row-ellipsis' : ''
+        if (!this.expanded[item.id]) {
+          classNames.push('row-ellipsis');
+        }
+
+        return classNames.join(' ')
 
         // return "jamnik"
       },
       handleContentClick: function(item, e, d) {
         console.log('handleContentClick', item, e, d)
-        console.log(this.expanded);
-        this.expanded[item.id] = !this.expanded[item.id];
-        this.kot = !this.kot;
+        // console.log(this.expanded);
 
-        this.$forceUpdate(); //tmp
+        this.expanded = Object.assign({}, this.expanded, {
+          [item.id]: !this.expanded[item.id]
+        })
+
+        // this.$forceUpdate(); //tmp
       },
       handleRowClick: function(a, e, d) {
         console.log('handleRowClick', a, e, d)
