@@ -30,11 +30,13 @@ export default new Vuex.Store({
         const author = await fetch (`${userUrl}/${post.userId}`, { headers })
         const authorJSON = await author.json()
 
+        post.isExpanded = false; //tmp
+
         post.name = authorJSON.name; 
       }));
 
-      debugger; // eslint-disable-line no-debugger
-
+      //
+     
       state.commit("setPosts", response);
     },
     async getAuthors(state) {

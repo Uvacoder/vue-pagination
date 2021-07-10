@@ -3,3 +3,38 @@
   background-color: red;
 }
 */
+
+
+.with-expanded {
+  /*
+tbody tr td:nth-child(2) {
+  max-width: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+*/
+}
+
+tbody tr td:nth-child(2) p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+
+tbody tr td:nth-child(2) {
+  cursor: pointer;
+}
+
+/*
+.dupa {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
