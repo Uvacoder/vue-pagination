@@ -51,6 +51,8 @@
 </template>
 
 <script>
+  const headerClass = "grey lighten-4"
+
   export default {
     data() {
       return {
@@ -62,25 +64,25 @@
             text: 'Post Title', 
             value: 'title',
             width: '15%',
-            class: "grey lighten-4"
+            class: headerClass
           },
           { text: 'Post Content',
             value: 'body' ,
             width: '35%',
-            class: "grey lighten-4"
+            class: headerClass
           },
             { 
-            text: 'See more', 
+            text: 'See More', 
             sortable: false,
             value: 'expand',
             width: '5%',
-            class: "grey lighten-4"
+            class: headerClass
           },
           { 
             text: 'Author', 
             value: 'name',
             width: '10%',
-            class: "grey lighten-4"
+            class: headerClass
           },
 
           { 
@@ -88,7 +90,7 @@
             value: 'remove', 
             sortable: false,
             width: '5%',
-            class: "grey lighten-4"
+            class: headerClass
           },
         ],
       }

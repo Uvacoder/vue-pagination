@@ -1,5 +1,5 @@
 <template>
-  <v-app theme--dark>
+  <v-app>
     <v-main>
       <DataTable/>
       <Footer />
