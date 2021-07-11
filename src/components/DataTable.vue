@@ -23,7 +23,6 @@
         :item-class="itemRowBackground"
         @click:row="handleRowClick"
       >
-
         <template v-slot:[`item.remove`]="{ item }">
           <v-icon
             small
