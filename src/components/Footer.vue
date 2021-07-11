@@ -21,7 +21,7 @@
       </v-card-text>
       <v-card-text class="grey lighten-2 pt-0">
         <p>This application was created for the needs of the recruitment process. It was built in Vue-Vuetify and Vuex.</p>
-        <p>To sort, click on title, content or author. To delete click thrash can icon. If you want to see full post content click 'See More'</p>
+        <p>To sort, click on title, content or author. To delete click thrash can icon. If you want to see full post content click 'See More' arrow.</p>
       </v-card-text>
       <v-divider/>
       <v-card-text class="grey lighten-2" >
