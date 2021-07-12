@@ -37,7 +37,7 @@
       icons: [
         {
           name: 'mdi-github',
-          url: 'https://github.com/patrykbura'
+          url: 'https://github.com/patrykbura/vue-pagination'
         }, {
           name: 'mdi-email',
           url: 'mailto:patrykbura@gmail.com'
@@ -46,7 +46,7 @@
           url: 'https://www.linkedin.com/in/patrykbura/'
         }, {
           name: 'mdi-docker',
-          url: 'https://hub.docker.com/repository/docker/patrykbura'
+          url: 'https://hub.docker.com/repository/docker/patrykbura/vue-posts'
         }
       ],
     })

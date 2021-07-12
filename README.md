@@ -1,24 +1,25 @@
-# vue-pagination
+# Vue-pagination
 
-## Project setup
-```
-npm install
-```
+*This is a portfolio project that displays list of posts downloaded from [JSON Placeholder](https://jsonplaceholder.typicode.com/).*
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Links
+#### **[Demo](https://patrykbura.github.io/vue-pagination/?fbclid=IwAR0D8GqmfXHxBEtnWY7EBS0pdefNRGHka9vkP8pCwD7-xRrO1_c0KKCTqwQ)**
+#### **[Docker](https://hub.docker.com/repository/docker/patrykbura/vue-posts/)**
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Features
 
-### Lints and fixes files
-```
-npm run lint
-```
+ - Search by title, author or any keyword
+ - Sorting
+ - Fully RWD
+ - Pagination
+ - Expandable post content
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Available Scripts
+
+```
+npm run serve - Runs the app in the development mode
+npm run build - Builds the app for production to the build folder
+npm run lint - Lints and fixes files
+```
+****
+&copy; 2021 Patryk Bura
