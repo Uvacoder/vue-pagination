@@ -25,26 +25,25 @@ export default new Vuex.Store({
     async getPosts(state) {
       const posts = await fetch(postsUrl, { headers });
       const response = await posts.json();
-     
-      //TODO consider
-      await Promise.all(response.map(async post => {
+      const result = await Promise.all(response.map(async post => {
         const author = await fetch (`${userUrl}/${post.userId}`, { headers })
         const authorJSON = await author.json()
 
-        post.isExpanded = false; //tmp
         post.name = authorJSON.name; 
+
+        return post;
       }));
-      state.commit("setPosts", response);
+
+      state.commit("setPosts", result);
     },
     async getAuthors(state) {
       const authors = await fetch (userUrl, { headers })
       const authorsJSON = await authors.json()
 
-      
       state.commit("setAuthors", authorsJSON);
     }
   },
   getters: {
-    getAllPosts: state => state.posts,
+    getAllPosts: state => state.posts
   }
 });
