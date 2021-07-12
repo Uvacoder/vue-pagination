@@ -3,7 +3,7 @@
 *This is a portfolio project that displays list of posts downloaded from [JSON Placeholder](https://jsonplaceholder.typicode.com/).*
 
 ### Links
-#### **[Demo](https://patrykbura.github.io/vue-pagination/?fbclid=IwAR0D8GqmfXHxBEtnWY7EBS0pdefNRGHka9vkP8pCwD7-xRrO1_c0KKCTqwQ)**
+#### **[Demo](https://patrykbura.github.io/vue-pagination/)**
 
 
 ## Features
