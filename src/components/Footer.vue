@@ -44,9 +44,6 @@
         }, {
           name: 'mdi-linkedin',
           url: 'https://www.linkedin.com/in/patrykbura/'
-        }, {
-          name: 'mdi-docker',
-          url: 'https://hub.docker.com/repository/docker/patrykbura/vue-posts'
         }
       ],
     })

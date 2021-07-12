@@ -4,7 +4,7 @@
 
 ### Links
 #### **[Demo](https://patrykbura.github.io/vue-pagination/?fbclid=IwAR0D8GqmfXHxBEtnWY7EBS0pdefNRGHka9vkP8pCwD7-xRrO1_c0KKCTqwQ)**
-#### **[Docker](https://hub.docker.com/repository/docker/patrykbura/vue-posts/)**
+
 
 ## Features
 
